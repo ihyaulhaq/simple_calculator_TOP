@@ -27,15 +27,49 @@ let firstNumber = 0;
 let secondNumber = 0;
 let operation;
 
+const buttons = document.querySelectorAll("button");
+const display = document.querySelector("#display");
+
 function add(firstNumber, secondNumber) {
-    return firstNumber + secondNumber;
+  return firstNumber + secondNumber;
 }
 function subtract(firstNumber, secondNumber) {
-    return firstNumber - secondNumber;
+  return firstNumber - secondNumber;
 }
 function multiply(firstNumber, secondNumber) {
-    return firstNumber * secondNumber;
+  return firstNumber * secondNumber;
 }
+
 function divide(firstNumber, secondNumber) {
-    return firstNumber / secondNumber;
+  return firstNumber / secondNumber;
 }
+
+function operate(firstNumber, secondNumber, operation) {
+  if (operation === "+") {
+    return add(firstNumber, secondNumber);
+  }
+  if (operation === "-") {
+    return subtract(firstNumber, secondNumber);
+  }
+  if (operation === "*") {
+    return multiply(firstNumber, secondNumber);
+  }
+  if (operation === "/") {
+    return devide(firstNumber, secondNumber);
+  }
+}
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.id === "clear") {
+      return (display.textContent = "0");
+    }
+    if (display.innerHTML == "0" && !isNaN(button.id)) {
+      return (display.textContent = button.id);
+    } else if (isNaN(display.textContent.slice(-1)) && isNaN(button.id)) {
+      return (display.textContent = display.textContent.slice(0, -1) + button.id);
+    } else {
+      display.textContent += button.id;
+    }
+  });
+});
