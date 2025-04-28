@@ -1,23 +1,46 @@
 body{
-    margin: 0;
-    padding: 0;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #container{
+    height: 400px;
+    width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    background-color: antiquewhite;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 #display {
     font-size:  40px;    
-    margin: 0;
+    width: 230px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
 }
 
-
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;    
+}
 button{
     padding: 10px;
     margin: 5px;
+    width: 50px;
+    height: 50px;
     font-size: larger;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+    background-color:rgb(255, 250, 240);
 }
